@@ -1,0 +1,16 @@
+; Fichier de zone pour le domaine l1-8.ephec-ti.be
+
+$TTL 86400
+@       IN      SOA     ns1.l1-8.ephec-ti.be. admin.l1-8.ephec-ti.be. (
+                        2024041201      ; numéro de série
+                        3600            ; rafraîchir (1 heure)
+                        1800            ; réessayer (30 minutes)
+                        604800          ; expirer (1 semaine)
+                        86400           ; TTL par défaut (1 jour)
+                        )
+
+@       IN      NS      ns1.l1-8.ephec-ti.be.
+
+ns1     IN      A       54.37.15.94
+www     IN      A       [adresse_IP_serveur_web]
+mail    IN      A       [adresse_IP_serveur_mail]
