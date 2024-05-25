@@ -1,16 +1,18 @@
 services:
   web:
     build: .
-    image: srv_web
+    image: server_web
     container_name: web
     hostname: web
     depends_on: 
       - php
     ports:
       - 80:80
+      - 443:443
     volumes:
       - ./www:/var/www
       - ./blog:/var/blog
+      - ./certificate/:/etc/letsencrypt/
     networks:
       - dmz
   php:
@@ -33,9 +35,14 @@ services:
       MYSQL_ROOT_PASSWORD: mypass
     volumes:
       - ./db:/docker-entrypoint-initdb.d
+      - ./my-resolve.cnf:/etc/mysql/conf.d/my-resolve.cnf:ro
+      - mariadb_data:/var/lib/mysql
     networks:
       - db_net
 
 networks:
   dmz:
   db_net:
+
+volumes:
+  mariadb_data:

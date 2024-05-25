@@ -1,7 +1,11 @@
 FROM nginx
 
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY www/index.html /var/www/
-COPY blog/index.html /var/blog/
+
+RUN apt update && apt install -y certbot python3-certbot-nginx
+RUN certbot --nginx -n -d www.l1-8.ephec-ti.be | echo "1"
 
 EXPOSE 80
+EXPOSE 443
+
+

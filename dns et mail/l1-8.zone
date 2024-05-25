@@ -20,7 +20,7 @@ blog	IN	A	54.37.14.135
 web	150	IN	A	54.37.14.135
 web     150     IN      A       54.37.15.94
 
-
+_acme-challenge.l1-8.ephec-ti.be.         IN      TXT     6gmNoWMBizMYpdslTrcrVIcI61xkVIkeDSVz2mOVdpY
 l1-8.ephec-ti.be.	IN	TXT	"v=spf1 mx -all"
 
 mail._domainkey	IN	TXT	( "v=DKIM1; h=sha256; k=rsa; "
